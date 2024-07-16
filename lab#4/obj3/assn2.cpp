@@ -8,7 +8,7 @@ class Student {
         string name;
         float mark1, mark2, mark3;
     public:
-        void get_data() {
+        void set() {
             cout << "Enter student name: ";
             cin >> name;
             cout << "Enter mark 1: ";
@@ -19,10 +19,7 @@ class Student {
             cin >> mark3;
         }
         friend class AverageCalculator;
-        void display(AverageCalculator ac) {
-            cout << "Name: " << name << endl;
-            cout << "Average: " << ac.mark_avg(this) << endl;
-        }
+        void display(AverageCalculator ac);
 };
 
 class AverageCalculator {
@@ -32,10 +29,15 @@ class AverageCalculator {
         }
 };
 
+void Student::display(AverageCalculator ac) {
+    cout << "Name: " << name << endl;
+    cout << "Average: " << ac.mark_avg(this) << endl;
+}
+
 int main() {
     Student s;
     AverageCalculator ac;
-    s.get_data();
+    s.set();
     s.display(ac);
     return 0;
 }
