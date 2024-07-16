@@ -33,7 +33,6 @@ void Student::display(AverageCalculator ac) {
     cout << "Name: " << name << endl;
     cout << "Average: " << ac.mark_avg(this) << endl;
 }
-
 int main() {
     Student s;
     AverageCalculator ac;

@@ -25,7 +25,7 @@ class Brick {
         friend float totalCost(Wall, Brick);
 };
 
-float totalCost(Wall w, Brick b) {
+float totalCost(Wal w, Brick b) {
     return w.length * w.height * b.cost;
 }
 
