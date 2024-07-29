@@ -1,9 +1,10 @@
 #include<iostream>
 using namespace std;
+
 class time1{
     int hour,minute,second;
     public:
-    time1 set(int h,int m,int s){
+    void set(int h,int m,int s){
         hour=h;
         minute=m;
         second=s;
@@ -15,10 +16,11 @@ class time1{
         b.second=second+a.second;
         return(b);
     }
-    ~time1(){
+    void display(){
         cout<<endl<<hour<<" hours "<<minute<<" minute "<<second<<" seconds";
     }
 };
+
 int main(){
     time1 p,q,r;
     int hh,mm,ss;
