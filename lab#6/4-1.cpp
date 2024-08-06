@@ -25,17 +25,25 @@ class String{
             cout<<"\nString overflow.";
         }
     }
+    String& operator+=(String ss){
+        if((strlen(str)+strlen(ss.str))<sz){
+            strcat(str,ss.str);
+            return *this;
+        }
+        else{
+            cout<<"\nString overflow.";
+        }
+    }
 };
 int main(){
-    cout<<"Before concatenation. ";
-    String s1="\nHappy Birthday";
-    String s2="to you";
-    String s3;
+    cout<<"Before concatenation.\n";
+    String s1="Happy ";
+    String s2="Birthday";
     s1.display();
     cout<<"\n";
     s2.display();
-    s3=s1+s2;
-    cout<<"\nAfter concatenation.";
-    s3.display();
+    s1+=s2;
+    cout<<"\nAfter concatenation using += operator.\n";
+    s1.display();
     return 0;
 }
