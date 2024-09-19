@@ -12,7 +12,7 @@ class complex1{
             real = r;
             img = i;
         }
-        friend void add(complex1,complex2);
+        friend complex1 operator+(complex1,complex2);
         void display(){
             cout<<real<<" + "<<img<<"i"<<endl;
         }
@@ -26,21 +26,23 @@ class complex2{
             real = r;
             img = i;
         }
-        friend void add(complex1,complex2);
+        friend complex1 operator+(complex1,complex2);
         void display(){
             cout<<real<<" + "<<img<<"i"<<endl;
         }
 };
-void add(complex1 A, complex2 B){
-    A.real = A.real+ B.real;
-    A.img = A.img + B.img;
-    A.display();
+complex1 operator+(complex1 A, complex2 B){
+    complex1 temp;
+    temp.real = A.real+ B.real;
+    temp.img = A.img + B.img;
+    return temp;
 }
 int main(){
-    complex1 A(4,5);
+    complex1 A(4,5), Z;
     complex2 B(1,2);
     A.display();
     B.display();
-    add(A,B);
+    Z=A+B;
+    Z.display();
     return 0;
 }
