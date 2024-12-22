@@ -20,7 +20,6 @@ class add{
         cout<<"\n The sum of first "<<n<<" natural number is "<<sum;
     }
 };
-int main(){
     add ad;
     ad.getn();
     ad.getsum();
